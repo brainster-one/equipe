@@ -1,4 +1,11 @@
+/ validation summary
+- if @team.errors.any?
+  - @team.errors.full_messages.each do |msg|
+    = msg
+
+/ team information form
 = @team.name
+= Settings.team_name
 = form_for @team, :url => { :action => "team" } do |t|
   = t.text_field :name
   = t.submit

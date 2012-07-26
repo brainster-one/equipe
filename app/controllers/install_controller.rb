@@ -5,8 +5,11 @@ class InstallController < ApplicationController
   def index
   end
 
+  # saves team information
   def team
     @team = Team.new(params[:team])
-    
-  end  
+    if @team.valid?
+    	Settings.team_name = @team.name
+    end
+  end
 end
