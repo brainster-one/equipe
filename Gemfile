@@ -22,6 +22,8 @@ end
 
 gem 'jquery-rails'
 gem 'haml'
+gem 'draper'
+gem 'rails-settings-cached'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

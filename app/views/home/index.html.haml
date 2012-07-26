@@ -1,1 +1,5 @@
-hello world
+- if @team_info_article.exist?
+  article not found
+- else
+  = @team_info_article.title
+  = @team_info_article.content
