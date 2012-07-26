@@ -1,0 +1,4 @@
+= @team.name
+= form_for @team, :url => { :action => "team" } do |t|
+  = t.text_field :name
+  = t.submit
