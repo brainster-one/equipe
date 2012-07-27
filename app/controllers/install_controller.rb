@@ -1,20 +1,27 @@
 class InstallController < ApplicationController
-  skip_before_filter :installed?
+  include Wicked::Wizard
+  steps :welcome, :team, :description, :complete
 
-  # step 0: greetings page of the equipe installation proccss
-  def index
-  end
-
-  # step 1: saves team information
-  def team
-    @team = Team.new(request.post? ? params[:team] : nil)
-    if request.post? && @team.valid?
-      Settings.team_name = @team.name
-      redirect_to :action => "description"
+  def show
+    case step
+    when :team
+      @team = Team.new
     end
+    render_wizard
   end
 
-  # step 2: saves team description 
-  def description
+  def update
+    case step
+    when :team
+      @team = Team.new(params[:team])
+      if @team.valid?
+        Settings.team_name = @team.name
+        redirect_to next_wizard_path
+        return
+      end
+    #when :complete
+    #  Settings.installed? = true
+    end
+    render_wizard
   end
 end

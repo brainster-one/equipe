@@ -4,6 +4,6 @@
     = msg
 
 / team information form
-= form_for @team, :url => { :action => "team" } do |t|
+= form_for @team, :url => wizard_path, :method => :put do |t|
   = t.text_field :name
   = t.submit

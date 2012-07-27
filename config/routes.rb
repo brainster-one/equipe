@@ -1,10 +1,11 @@
 Equipe::Application.routes.draw do
+  resources :install
   root :to => 'home#index'
-  
+
   # installation workflow
-  match 'install' => 'install#index', :as => :install
-  match 'install/team' => 'install#team'
-  match 'install/description' => 'install#description'
+  #match 'install' => 'install#index', :as => :install
+  #match 'install/team' => 'install#team'
+  #match 'install/description' => 'install#description'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
