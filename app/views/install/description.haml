@@ -1,10 +1,12 @@
-/ validation summary
-- if @article.errors.any?
-  - @article.errors.full_messages.each do |msg|
-    = msg
+/ step description
+= t "install.description_step"
 
 / team information form
 = form_for @article, :url => wizard_path, :method => :put do |t|
+  / validation summary
+  - @article.errors.full_messages.each do |msg|
+    = msg
+  / fields
   = t.hidden_field :title, :value => "Description Article Of The Team"
   = t.text_area :content
   = t.submit

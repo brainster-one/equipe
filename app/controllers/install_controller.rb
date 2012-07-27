@@ -14,6 +14,9 @@ class InstallController < ApplicationController
 
   def update
     case step
+    when :welcome
+      redirect_to next_wizard_path
+      return
     when :team
       @team = Team.new(params[:team])
       if @team.valid?

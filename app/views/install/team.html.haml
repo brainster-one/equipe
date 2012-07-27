@@ -1,9 +1,11 @@
-/ validation summary
-- if @team.errors.any?
-  - @team.errors.full_messages.each do |msg|
-    = msg
+/ step description
+= t "install.team_step"
 
 / team information form
 = form_for @team, :url => wizard_path, :method => :put do |t|
+  / validation summary
+  - @team.errors.full_messages.each do |msg|
+    = msg
+  / fields
   = t.text_field :name
   = t.submit

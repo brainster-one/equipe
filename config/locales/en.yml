@@ -1,5 +1,7 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  install:
+    title: "Install Equipe"
+    welcome_step: "Hello and welcome! You are about to configure Equipe for your own purposes."
+    team_step: "Enter team name, please"
+    description_step: "Enter team description, please"
+    complete_step: "Installation is complete"
