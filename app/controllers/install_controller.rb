@@ -6,6 +6,8 @@ class InstallController < ApplicationController
     case step
     when :team
       @team = Team.new
+    when :description
+      @article = Article.new      
     end
     render_wizard
   end
@@ -19,8 +21,15 @@ class InstallController < ApplicationController
         redirect_to next_wizard_path
         return
       end
-    #when :complete
-    #  Settings.installed? = true
+    when :description
+      @article = Article.publish(params[:article])
+      Settings.team_description_article_id = @article.id
+      redirect_to next_wizard_path
+      return
+    when :complete
+      Settings['installed?'] = true
+      redirect_to "/"
+      return
     end
     render_wizard
   end
