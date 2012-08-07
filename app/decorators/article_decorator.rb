@@ -1,13 +1,13 @@
 class ArticleDecorator < Draper::Base
   decorates :article
-  
+
   def exist?
     article.nil?
   end
 
   def title
     # todo: add project prefix
-    article.title
+    article.title or "Untitled"
   end
 
   # Accessing Helpers
