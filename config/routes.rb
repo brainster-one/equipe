@@ -2,6 +2,8 @@ Equipe::Application.routes.draw do
   resources :install
   root :to => 'home#index'
 
+  resources :articles
+
   # installation workflow
   #match 'install' => 'install#index', :as => :install
   #match 'install/team' => 'install#team'
