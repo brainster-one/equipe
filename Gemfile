@@ -21,7 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'haml'
+gem 'haml-rails'
 gem 'draper'
 gem 'rails-settings-cached'
 gem 'wicked'
