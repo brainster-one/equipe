@@ -5,3 +5,7 @@ en:
     team_step: "Enter team name, please"
     description_step: "Enter team description, please"
     complete_step: "Installation is complete"
+  project:
+    article:
+      overview: "Overview"
+

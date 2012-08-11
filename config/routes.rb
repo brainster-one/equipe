@@ -1,4 +1,6 @@
 Equipe::Application.routes.draw do
+  resources :projects
+
   resources :install
   root :to => 'home#index'
 

@@ -1,14 +1,5 @@
-class ArticleDecorator < Draper::Base
-  decorates :article
-
-  def exist?
-    article.nil?
-  end
-
-  def title
-    return article.projects.join(",") + ": " + article.title if article.projects.count >= 1
-    article_title
-  end
+class ProjectDecorator < Draper::Base
+  decorates :project
 
   # Accessing Helpers
   #   You can access any helper via a proxy
