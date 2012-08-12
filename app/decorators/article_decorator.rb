@@ -7,7 +7,7 @@ class ArticleDecorator < Draper::Base
 
   def title
     return article.projects.join(",") + ": " + article.title if article.projects.count >= 1
-    article_title
+    article.title
   end
 
   # Accessing Helpers

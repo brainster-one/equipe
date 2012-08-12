@@ -1,6 +1,9 @@
+- show_title = true if local_assigns[:show_title].nil? 
+
 %article
-  %header
-    %a.title{:href => article_path(article)}= article.title
+  - if show_title
+    %header
+      %a.title{:href => article_path(article)}= article.title
   %p.content= article.content
   = link_to 'Edit', edit_article_path(article)
   = link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
