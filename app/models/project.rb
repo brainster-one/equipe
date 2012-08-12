@@ -14,8 +14,8 @@ class Project < ActiveRecord::Base
       )
       pa.article_type = "description"
       pa.save()
+      pa.project # return created project
     end
-    p
   end
 
   # returns description article

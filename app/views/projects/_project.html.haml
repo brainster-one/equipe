@@ -1,4 +1,5 @@
 %article
   %header
     %a.title{:href => project_path(project)}= project.name
-  %p.content= render project.description_article
+  - if !project.description_article.nil?
+    %p.content= render project.description_article, { show_title: false }

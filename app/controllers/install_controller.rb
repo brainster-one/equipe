@@ -5,7 +5,7 @@ class InstallController < ApplicationController
   def show
     case step
     when :team
-      @team = Team.new
+      @team = TeamInfo.new
     when :description
       @article = Article.new      
     end
@@ -18,7 +18,7 @@ class InstallController < ApplicationController
       redirect_to next_wizard_path
       return
     when :team
-      @team = Team.new(params[:team])
+      @team = TeamInfo.new(params[:team_info])
       if @team.valid?
         Settings.team_name = @team.name
         redirect_to next_wizard_path

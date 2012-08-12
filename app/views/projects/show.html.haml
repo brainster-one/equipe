@@ -3,10 +3,10 @@
 %p
   %b Name:
   = @project.name
-%p
-  %b Description:
-  = @project.description
 
+%p
+  %b
+    = render @project.articles
 = link_to 'Edit', edit_project_path(@project)
 \|
 = link_to 'Back', projects_path
