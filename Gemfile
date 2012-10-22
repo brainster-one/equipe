@@ -26,6 +26,7 @@ gem 'draper'
 gem 'rails-settings-cached'
 gem 'wicked'
 gem 'active_attr'
+gem 'therubyracer'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
